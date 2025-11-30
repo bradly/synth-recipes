@@ -1,0 +1,15 @@
+#light-switch:hover { cursor: pointer; }
+
+.light-switch-on  { display: block; }
+.light-switch-off { display: none;  }
+
+@media (prefers-color-scheme: dark) {
+  .light-switch-on  { display: none;  }
+  .light-switch-off { display: block; }
+}
+
+body.dark .light-switch-on  { display: none;  }
+body.dark .light-switch-off { display: block; }
+
+body.light .light-switch-on  { display: block; }
+body.light .light-switch-off { display: none;  }

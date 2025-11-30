@@ -1,0 +1,47 @@
+{
+  "name": "Plucked String",
+  "tags": ["keys"],
+  "note": "C4",
+  "waveform": {
+    "type": "sawtooth",
+    "count": 1,
+    "detune": 0
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 800,
+    "resonance": 2
+  },
+  "ampEnvelope": {
+    "attack": 0.01,
+    "decay": 0.4,
+    "sustain": 0,
+    "release": 0.2
+  },
+  "filterEnvelope": {
+    "amount": 4000,
+    "attack": 0.01,
+    "decay": 0.3,
+    "sustain": 0,
+    "release": 0.1
+  },
+  "noise": {
+    "type": "white",
+    "mix": 0
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}

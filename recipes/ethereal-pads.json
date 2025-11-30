@@ -1,0 +1,47 @@
+{
+  "name": "Ethereal Pad",
+  "tags": ["pad"],
+  "note": "C4",
+  "waveform": {
+    "type": "triangle",
+    "count": 3,
+    "detune": 8
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 1200,
+    "resonance": 4
+  },
+  "ampEnvelope": {
+    "attack": 0.8,
+    "decay": 0.5,
+    "sustain": 0.7,
+    "release": 1.5
+  },
+  "filterEnvelope": {
+    "amount": 2000,
+    "attack": 1.0,
+    "decay": 0.5,
+    "sustain": 0.4,
+    "release": 1.0
+  },
+  "noise": {
+    "type": "pink",
+    "mix": 0.05
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}

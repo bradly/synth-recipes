@@ -1,0 +1,47 @@
+{
+  "name": "Warm Strings",
+  "tags": ["pad"],
+  "note": "C4",
+  "waveform": {
+    "type": "sawtooth",
+    "count": 3,
+    "detune": 12
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 2000,
+    "resonance": 1
+  },
+  "ampEnvelope": {
+    "attack": 0.4,
+    "decay": 0.2,
+    "sustain": 0.8,
+    "release": 0.6
+  },
+  "filterEnvelope": {
+    "amount": 1500,
+    "attack": 0.5,
+    "decay": 0.3,
+    "sustain": 0.6,
+    "release": 0.4
+  },
+  "noise": {
+    "type": "white",
+    "mix": 0
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}

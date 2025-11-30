@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Synth Recipes</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="light-switch.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Synth Recipes</h1>
+    </div>
+
+    <div id="layout">
+      <aside id="sidebar">
+        <form>
+          <input id="search" type="text" name="search" placeholder="🔎 Search..."/>
+        </form>
+
+        <ul id="recipes">
+          <li><a href="#acid-bass">Acid bass</a></li>
+          <li><a href="#closed-hi-hat">Closed hi-hat</a></li>
+          <li><a href="#electric-piano">Electric piano</a></li>
+          <li><a href="#ethereal-pads">Ethereal pads</a></li>
+          <li><a href="#glass-bells">Glass bells</a></li>
+          <li><a href="#kick-drum">Kick drum</a></li>
+          <li><a href="#open-hi-hat">Open hi-hat</a></li>
+          <li><a href="#plucked-strings">Plucked strings</a></li>
+          <li><a href="#snare-drum">Snare drum</a></li>
+          <li><a href="#square-lead">Square lead</a></li>
+          <li><a href="#Sub-bass">Sub bass</a></li>
+          <li><a href="#warm-strings">Warm strings</a></li>
+        </ul>
+      </aside>
+
+      <main id="main">
+        <div id="info" class="hidden">
+          <h2 id="sound-name"></h2>
+          <div id="oscilloscope"></div>
+          <select id="note" name="note">
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="C3">C3</option>
+            <option value="C4">C4</option>
+            <option value="C5">C5</option>
+            <option value="C6">C6</option>
+          </select>
+          <button id="play">&#9658; Play</button>
+        </div>
+
+        <div id="waveform">
+          <h3>Waveform</h3>
+
+          <fieldset>
+            <legend>Type</legend>
+            <label>
+              <input type="radio" name="waveform_type" value="sine"> sine
+            </label>
+            <label>
+              <input type="radio" name="waveform_type" value="square"> square
+            </label>
+            <label>
+              <input type="radio" name="waveform_type" value="sawtooth"> sawtooth
+            </label>
+            <label>
+              <input type="radio" name="waveform_type" value="triangle"> triangle
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Unison</legend>
+            <label>
+              Count:
+              <input type="number" name="waveform_count" min="1" max="3" step="1">
+            </label>
+
+            <label>
+              Detune:
+              <input type="number" name="waveform_detune" min="-100" max="100" step="1">
+            </label>
+          </fieldset>
+        </div>
+
+        <div id="filter">
+          <h3>Filter</h3>
+          <fieldset>
+            <legend>Type</legend>
+            <label>
+              <input type="radio" name="filter_type" value="lowpass"> lowpass
+            </label>
+            <label>
+              <input type="radio" name="filter_type" value="highpass"> highpass
+            </label>
+            <label>
+              <input type="radio" name="filter_type" value="bandpass"> bandpass
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Settings</legend>
+            <label>
+              Frequency:
+              <input type="number" name="filter_frequency" min="20" max="20000" step="1">
+            </label>
+            <label>
+              Resonance:
+              <input type="number" name="filter_resonance" min="0" max="30" step="0.1">
+            </label>
+          </fieldset>
+        </div>
+
+        <div id="amp-adsr">
+          <h3>Amp</h3>
+          <fieldset>
+            <legend>ADSR</legend>
+            <label>
+              Attack:
+              <input type="number" name="amp_attack" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Decay:
+              <input type="number" name="amp_decay" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Sustain:
+              <input type="number" name="amp_sustain" min="0" max="1" step="0.01">
+            </label>
+            <label>
+              Release:
+              <input type="number" name="amp_release" min="0" max="5" step="0.01">
+            </label>
+          </fieldset>
+        </div>
+
+        <div id="envelope-adsr">
+          <h3>Envelope</h3>
+          <label>
+            Amount:
+            <input type="number" name="envelope_amount" min="-10000" max="10000" step="100">
+          </label>
+          <fieldset>
+            <legend>ADSR</legend>
+            <label>
+              Attack:
+              <input type="number" name="envelope_attack" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Decay:
+              <input type="number" name="envelope_decay" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Sustain:
+              <input type="number" name="envelope_sustain" min="0" max="1" step="0.01">
+            </label>
+            <label>
+              Release:
+              <input type="number" name="envelope_release" min="0" max="5" step="0.01">
+            </label>
+          </fieldset>
+        </div>
+
+        <div id="noise">
+          <h3>Noise</h3>
+          <label>
+            Type:
+            <select name="noise_type">
+              <option value="white">white</option>
+              <option value="pink">pink</option>
+              <option value="brown">brown</option>
+            </select>
+          </label>
+          <label>
+            Mix:
+            <input type="number" name="noise_mix" min="0" max="1" step="0.01">
+          </label>
+        </div>
+
+        <div id="pitch">
+          <h3>Pitch</h3>
+          <label>
+            Amount:
+            <input type="number" name="pitch_amount" min="-48" max="48" step="1">
+          </label>
+          <fieldset>
+            <legend>ADSR</legend>
+            <label>
+              Attack:
+              <input type="number" name="pitch_attack" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Decay:
+              <input type="number" name="pitch_decay" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Sustain:
+              <input type="number" name="pitch_sustain" min="0" max="1" step="0.01">
+            </label>
+            <label>
+              Release:
+              <input type="number" name="pitch_release" min="0" max="5" step="0.01">
+            </label>
+          </fieldset>
+        </div>
+
+        <div id="fm-synthesis">
+          <h3>FM Synthesis</h3>
+          <label>
+            Ratio:
+            <input type="number" name="fm_ratio" min="0.5" max="16" step="0.1">
+          </label>
+          <label>
+            Index:
+            <input type="number" name="fm_index" min="0" max="100" step="1">
+          </label>
+
+          <fieldset>
+            <legend>Modulator Envelope</legend>
+            <label>
+              Attack:
+              <input type="number" name="fm_attack" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Decay:
+              <input type="number" name="fm_decay" min="0" max="2" step="0.01">
+            </label>
+            <label>
+              Sustain:
+              <input type="number" name="fm_sustain" min="0" max="1" step="0.01">
+            </label>
+            <label>
+              Release:
+              <input type="number" name="fm_release" min="0" max="5" step="0.01">
+            </label>
+          </fieldset>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        2025 &copy; <a href="https://bradlyfeeley.com" target="_blank">Bradly Feeley</a>
+        <br />
+        AI free &there4; Human full. 𓀠𓀠
+      </p>
+      <div id="light-switch">
+        <pre class="light-switch-on">
+          ╔═══════════╗
+          ║           ║
+          ║           ║
+          ║    ╔═╗    ║
+          ║    ║▒║    ║
+          ║    ╠═╣    ║
+          ║    ║ ║    ║
+          ║    ╚═╝    ║
+          ║           ║
+          ║           ║
+          ╚═══════════╝
+        </pre>
+        <pre class=" light-switch-off">
+          ╔═══════════╗
+          ║           ║
+          ║           ║
+          ║    ╔═╗    ║
+          ║    ║ ║    ║
+          ║    ╠═╣    ║
+          ║    ║▒║    ║
+          ║    ╚═╝    ║
+          ║           ║
+          ║           ║
+          ╚═══════════╝
+        </pre>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/tone"></script>
+    <script src="light-switch.js"></script>
+    <script src="synth-recipes.js"></script>
+  </body>
+</html>

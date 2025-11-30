@@ -1,0 +1,47 @@
+{
+  "name": "Open Hi-Hat",
+  "tags": ["drum"],
+  "note": "C4",
+  "waveform": {
+    "type": "square",
+    "count": 1,
+    "detune": 0
+  },
+  "filter": {
+    "type": "highpass",
+    "frequency": 7000,
+    "resonance": 3
+  },
+  "ampEnvelope": {
+    "attack": 0.01,
+    "decay": 0.3,
+    "sustain": 0.1,
+    "release": 0.4
+  },
+  "filterEnvelope": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "noise": {
+    "type": "white",
+    "mix": 1
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}

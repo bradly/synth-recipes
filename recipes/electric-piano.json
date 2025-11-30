@@ -1,0 +1,47 @@
+{
+  "name": "Electric Piano",
+  "tags": ["keys"],
+  "note": "C4",
+  "waveform": {
+    "type": "sine",
+    "count": 1,
+    "detune": 0
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 5000,
+    "resonance": 0
+  },
+  "ampEnvelope": {
+    "attack": 0.01,
+    "decay": 0.8,
+    "sustain": 0.3,
+    "release": 0.4
+  },
+  "filterEnvelope": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "noise": {
+    "type": "white",
+    "mix": 0
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 2,
+    "index": 8,
+    "attack": 0.01,
+    "decay": 0.6,
+    "sustain": 0.1,
+    "release": 0.3
+  }
+}

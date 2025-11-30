@@ -1,0 +1,47 @@
+{
+  "name": "Square Lead",
+  "tags": ["lead"],
+  "note": "C4",
+  "waveform": {
+    "type": "square",
+    "count": 2,
+    "detune": 6
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 1500,
+    "resonance": 5
+  },
+  "ampEnvelope": {
+    "attack": 0.01,
+    "decay": 0.2,
+    "sustain": 0.7,
+    "release": 0.15
+  },
+  "filterEnvelope": {
+    "amount": 2500,
+    "attack": 0.01,
+    "decay": 0.25,
+    "sustain": 0.3,
+    "release": 0.1
+  },
+  "noise": {
+    "type": "white",
+    "mix": 0
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}
