@@ -103,7 +103,7 @@ playButton.addEventListener('click', async () => {
       harmonicity: parseFloat(getInputValue('fm_ratio')),
       modulationIndex: fm_index,
       oscillator: {
-        type: oscillator_type
+        type: waveform_type
       },
       envelope: {
         attack: parseFloat(getInputValue('amp_attack')),
@@ -119,12 +119,14 @@ playButton.addEventListener('click', async () => {
       }
     });
   } else {
+    const oscillatorConfig = { type: oscillator_type };
+    if (waveform_count > 1) {
+      oscillatorConfig.count = waveform_count;
+      oscillatorConfig.spread = parseFloat(getInputValue('waveform_detune'));
+    }
+
     synth = new Tone.MonoSynth({
-      oscillator: {
-        type: oscillator_type,
-        count: waveform_count,
-        spread: parseFloat(getInputValue('waveform_detune'))
-      },
+      oscillator: oscillatorConfig,
       filter: {
         type: getInputValue('filter_type'),
         frequency: parseFloat(getInputValue('filter_frequency')),
