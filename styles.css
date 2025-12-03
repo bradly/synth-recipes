@@ -104,6 +104,7 @@ h2 { font-size: 20px; }
 h3 { font-size: 15px; }
 
 fieldset {
+  margin-top: 10px;
   border: 1px dotted var(--color);
 }
 fieldset:not(:last-child) {
