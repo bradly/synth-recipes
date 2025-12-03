@@ -10,8 +10,8 @@
   },
   "filter": {
     "type": "lowpass",
-    "frequency": 260,
-    "resonance": 0.1
+    "frequency": 20000,
+    "resonance": 0
   },
   "ampEnvelope": {
     "attack": 0.01,
@@ -20,20 +20,20 @@
     "release": 0.1
   },
   "filterEnvelope": {
-    "amount": 25,
-    "attack": 0.01,
-    "decay": 0.1,
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
     "sustain": 0,
-    "release": 0.1
+    "release": 0
   },
   "noise": {
     "type": "none",
     "mix": 0
   },
   "pitch": {
-    "amount": -4,
+    "amount": 0,
     "attack": 0,
-    "decay": 0.03,
+    "decay": 0,
     "sustain": 0,
     "release": 0
   },
