@@ -2,6 +2,7 @@
   "name": "Square Lead",
   "tags": ["lead"],
   "note": "C4",
+  "duration": "4n",
   "waveform": {
     "type": "square",
     "count": 2,

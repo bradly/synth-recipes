@@ -2,6 +2,7 @@
   "name": "Warm Strings",
   "tags": ["pad"],
   "note": "C4",
+  "duration": "1n",
   "waveform": {
     "type": "sawtooth",
     "count": 3,

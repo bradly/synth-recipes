@@ -2,6 +2,7 @@
   "name": "Glass Bells",
   "tags": ["keys"],
   "note": "C5",
+  "duration": "2n",
   "waveform": {
     "type": "sine",
     "count": 1,

@@ -2,6 +2,7 @@
   "name": "Sub Bass",
   "tags": ["bass"],
   "note": "C1",
+  "duration": "2n",
   "waveform": {
     "type": "sine",
     "count": 1,

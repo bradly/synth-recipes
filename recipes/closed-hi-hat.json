@@ -2,6 +2,7 @@
   "name": "Closed Hi-Hat",
   "tags": ["drum"],
   "note": "C4",
+  "duration": "32n",
   "waveform": {
     "type": "square",
     "count": 1,

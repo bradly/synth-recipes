@@ -2,6 +2,7 @@
   "name": "Snare Drum",
   "tags": ["drum"],
   "note": "C3",
+  "duration": "16n",
   "waveform": {
     "type": "triangle",
     "count": 1,

@@ -2,6 +2,7 @@
   "name": "Electric Piano",
   "tags": ["keys"],
   "note": "C4",
+  "duration": "2n",
   "waveform": {
     "type": "sine",
     "count": 1,

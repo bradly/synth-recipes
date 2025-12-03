@@ -2,6 +2,7 @@
   "name": "Open Hi-Hat",
   "tags": ["drum"],
   "note": "C4",
+  "duration": "8n",
   "waveform": {
     "type": "square",
     "count": 1,

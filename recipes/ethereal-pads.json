@@ -2,6 +2,7 @@
   "name": "Ethereal Pad",
   "tags": ["pad"],
   "note": "C4",
+  "duration": "1n",
   "waveform": {
     "type": "triangle",
     "count": 3,

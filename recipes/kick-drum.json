@@ -2,6 +2,7 @@
   "name": "Kick Drum",
   "tags": ["drum"],
   "note": "C2",
+  "duration": "8n",
   "waveform": {
     "type": "sine",
     "count": 1,

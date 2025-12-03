@@ -46,6 +46,7 @@ function getInputValue(name) {
 function populateUI(sound) {
   soundName.textContent = sound.name;
   setInputValue("note", sound.note);
+  setInputValue("duration", sound.duration);
 
   setInputValue("waveform_type", sound.waveform.type);
   setInputValue("waveform_count", sound.waveform.count);
@@ -174,7 +175,7 @@ playButton.addEventListener('click', async () => {
   const pitchRelease = parseFloat(getInputValue('pitch_release'));
   const peakFreq = baseFreq * Math.pow(2, pitchAmount / 12);
   const sustainFreq = baseFreq + (peakFreq - baseFreq) * pitchSustain;
-  const duration = Tone.Time('8n').toSeconds();
+  const duration = Tone.Time(getInputValue('duration')).toSeconds();
   const now = Tone.now();
   const releaseTime = parseFloat(getInputValue('amp_release'));
 

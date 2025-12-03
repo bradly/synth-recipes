@@ -2,6 +2,7 @@
   "name": "Acid Bass",
   "tags": ["bass"],
   "note": "C2",
+  "duration": "4n",
   "waveform": {
     "type": "sawtooth",
     "count": 1,

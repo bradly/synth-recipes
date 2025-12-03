@@ -2,6 +2,7 @@
   "name": "Plucked String",
   "tags": ["keys"],
   "note": "C4",
+  "duration": "4n",
   "waveform": {
     "type": "sawtooth",
     "count": 1,
