@@ -94,7 +94,9 @@ playButton.addEventListener('click', async () => {
   const waveform_count = parseInt(getInputValue('waveform_count'));
   const waveform_type = getInputValue('waveform_type');
   const oscillator_type = waveform_count > 1 ? 'fat' + waveform_type : waveform_type;
+  const noise_type = getInputValue('noise_type');
   const noise_mix = parseFloat(getInputValue('noise_mix'));
+  const useNoise = noise_type && noise_mix > 0;
   const fm_index = parseFloat(getInputValue('fm_index'));
 
   let synth;
@@ -150,22 +152,29 @@ playButton.addEventListener('click', async () => {
     });
   }
 
-  const noiseEnvelope = new Tone.AmplitudeEnvelope({
-    attack: parseFloat(getInputValue('amp_attack')),
-    decay: parseFloat(getInputValue('amp_decay')),
-    sustain: parseFloat(getInputValue('amp_sustain')),
-    release: parseFloat(getInputValue('amp_release'))
-  });
 
-  const noise = new Tone.Noise({
-    type: getInputValue('noise_type')
-  });
+  let noise, noiseEnvelope, crossFade;
+  if (useNoise) {
+    noiseEnvelope = new Tone.AmplitudeEnvelope({
+      attack: parseFloat(getInputValue('amp_attack')),
+      decay: parseFloat(getInputValue('amp_decay')),
+      sustain: parseFloat(getInputValue('amp_sustain')),
+      release: parseFloat(getInputValue('amp_release'))
+    });
 
-  const crossFade = new Tone.CrossFade(noise_mix).toDestination();
+    noise = new Tone.Noise({
+      type: noise_type
+    });
 
-  synth.connect(crossFade.a);
-  noise.connect(noiseEnvelope);
-  noiseEnvelope.connect(crossFade.b);
+    crossFade = new Tone.CrossFade(noise_mix).toDestination();
+
+    synth.connect(crossFade.a);
+    noise.connect(noiseEnvelope);
+    noiseEnvelope.connect(crossFade.b);
+  } else {
+    synth.toDestination();
+  }
+
 
   const baseFreq = Tone.Frequency(note).toFrequency();
   const pitchAmount = parseFloat(getInputValue('pitch_amount'));
@@ -179,8 +188,11 @@ playButton.addEventListener('click', async () => {
   const now = Tone.now();
   const releaseTime = parseFloat(getInputValue('amp_release'));
 
-  noise.start(now);
-  noiseEnvelope.triggerAttackRelease(duration, now);
+  if (useNoise) {
+    noise.start(now);
+    noiseEnvelope.triggerAttackRelease(duration, now);
+  }
+
   synth.triggerAttack(note, now);
   synth.frequency.setValueAtTime(baseFreq, now);
   synth.frequency.linearRampToValueAtTime(peakFreq, now + pitchAttack);
@@ -190,13 +202,18 @@ playButton.addEventListener('click', async () => {
   synth.triggerRelease(now + duration);
 
   const stopTime = now + duration + releaseTime;
-  noise.stop(stopTime);
+
+  if (useNoise) {
+    noise.stop(stopTime);
+  }
 
   Tone.Draw.schedule(() => {
     synth.dispose();
-    noise.dispose();
-    noiseEnvelope.dispose();
-    crossFade.dispose();
+    if (useNoise) {
+      noise.dispose();
+      noiseEnvelope.dispose();
+      crossFade.dispose();
+    }
   }, stopTime);
 });
 

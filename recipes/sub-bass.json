@@ -27,7 +27,7 @@
     "release": 0.1
   },
   "noise": {
-    "type": "white",
+    "type": "none",
     "mix": 0
   },
   "pitch": {
