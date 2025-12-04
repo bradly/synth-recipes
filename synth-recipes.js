@@ -96,7 +96,7 @@ playButton.addEventListener('click', async () => {
   const oscillator_type = waveform_count > 1 ? 'fat' + waveform_type : waveform_type;
   const noise_type = getInputValue('noise_type');
   const noise_mix = parseFloat(getInputValue('noise_mix'));
-  const useNoise = noise_type && noise_mix > 0;
+  const useNoise = noise_type != "none" && noise_mix > 0;
   const fm_index = parseFloat(getInputValue('fm_index'));
 
   let synth;
