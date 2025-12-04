@@ -27,8 +27,8 @@
     "release": 1.0
   },
   "noise": {
-    "type": "pink",
-    "mix": 0.05
+    "type": "none",
+    "mix": 0
   },
   "pitch": {
     "amount": 0,
