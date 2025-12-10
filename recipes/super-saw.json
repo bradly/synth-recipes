@@ -1,0 +1,48 @@
+{
+  "name": "supersaw",
+  "tags": ["lead", "trance", "unison"],
+  "note": "C4",
+  "duration": "2n",
+  "waveform": {
+    "type": "sawtooth",
+    "count": 7,
+    "detune": 25
+  },
+  "filter": {
+    "type": "lowpass",
+    "frequency": 8000,
+    "resonance": 1
+  },
+  "ampEnvelope": {
+    "attack": 0.05,
+    "decay": 0.3,
+    "sustain": 0.7,
+    "release": 0.4
+  },
+  "filterEnvelope": {
+    "amount": 2000,
+    "attack": 0.1,
+    "decay": 0.5,
+    "sustain": 0.3,
+    "release": 0.3
+  },
+  "noise": {
+    "type": "white",
+    "mix": 0
+  },
+  "pitch": {
+    "amount": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  },
+  "fm": {
+    "ratio": 1,
+    "index": 0,
+    "attack": 0,
+    "decay": 0,
+    "sustain": 0,
+    "release": 0
+  }
+}
