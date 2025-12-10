@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Synth recipe",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    
+    "note": {
+      "type": "string"
+    },
+
+    "duration": {
+      "enum": ["32n", "16n", "8n", "4n", "2n", "1n"]
+    },
+
+    "waveform": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["sine", "square", "sawtooth", "triangle"]
+        },
+        "count": {
+          "type": "integer"
+        },
+        "detune": {
+          "type": "integer"
+        }
+      }
+    },
+
+    "filter": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["lowpass", "highpass", "bandpass"]
+        },
+        "frequency": {
+          "type": "integer"
+        },
+        "resonance": {
+          "type": "integer"
+        }
+      }
+    },
+
+    "ampEnvelope": {
+      "type": "object",
+      "properties": {
+        "attack": {
+          "type": "number"
+        },
+        "decay": {
+          "type": "number"
+        },
+        "sustain": {
+          "type": "number"
+        },
+        "release": {
+          "type": "number"
+        }
+      }
+    },
+
+    "filterEnvelope": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "integer"
+        },
+        "attack": {
+          "type": "number"
+        },
+        "decay": {
+          "type": "number"
+        },
+        "sustain": {
+          "type": "number"
+        },
+        "release": {
+          "type": "number"
+        }
+      }
+    },
+
+    "noise": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["none", "brown", "pink", "white"]
+        },
+        "mix": {
+          "type": "number"
+        }
+      }
+    },
+
+    "pitch": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "integer"
+        },
+        "attack": {
+          "type": "number"
+        },
+        "decay": {
+          "type": "number"
+        },
+        "sustain": {
+          "type": "number"
+        },
+        "release": {
+          "type": "number"
+        }
+      }
+    },
+
+    "fm": {
+      "type": "object",
+      "properties": {
+        "ratio": {
+          "type": "number"
+        },
+        "index": {
+          "type": "integer"
+        },
+        "attack": {
+          "type": "number"
+        },
+        "decay": {
+          "type": "number"
+        },
+        "sustain": {
+          "type": "number"
+        },
+        "release": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
